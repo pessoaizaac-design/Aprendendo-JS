@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --background: #0d1321;
+    --primary-color: #f0ebd8;
+    --black-color-two: #0000007d;
+    --white-color: #E9E9E9;  
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.5;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--white-color);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.8rem;
+    margin-top: -1.2rem;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 64rem;
+    margin: 5rem auto;
+    padding: 2rem;
+    background: var(--black-color-two);
+    color: var(--white-color);
+    border-radius: 2rem;
+}
+
+form input, 
+form label, 
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+form input {
+    font-size: 2.4rem;
+    padding: 0.8rem 2rem;
+    border: 0.1rem solid transparent;
+}
+
+form input:focus {
+    border-color: var(--primary-color);
+}
+
+form button {
+    border: none;
+    background: #1d2d44;
+    color: var(--primary-color);
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+form button:hover {
+    font-weight: 800;
+}
+
+form label {
+    font-size: 1.8rem;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* .texto {
+    margin-top: 4rem;
+    background: #1d2d4449;
+    text-align: center;
+}
+*/
+
+.paragrafo-resultado {
+    margin-top: 2rem;
+    background: #17b05983;
+    text-align: center;
+}
+
+.bad {
+    margin-top: 2rem;
+    background: #d5242461;
+    text-align: center;
+}
