@@ -20,3 +20,25 @@ function iniciarRelogio() {
         relogio.innerHTML = getTime(segundos)
     }, 1000);
 }
+
+iniciar.addEventListener('click', function(event) {
+    clearInterval(timer);
+    relogio.classList.remove('pausado');
+    relogio.classList.remove('zerado');
+    
+    iniciarRelogio();
+})
+
+pausar.addEventListener('click', function(event) {
+    relogio.classList.add('pausado');
+    clearInterval(timer);
+})
+
+zerar.addEventListener('click', function(event) {
+    clearInterval(timer);
+    relogio.classList.remove('pausado')
+    relogio.classList.add('zerado');
+
+    relogio.innerHTML = '00:00:00'
+    segundos = 0;
+})
