@@ -1,0 +1,20 @@
+body {
+    background: rgb(25, 72, 143);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px 10px;
+    max-width: 600px;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+.container h1 {
+    margin-left: 10px;
+    font-size: 25px;
+}
