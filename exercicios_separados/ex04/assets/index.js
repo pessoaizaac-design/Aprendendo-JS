@@ -1,45 +1,49 @@
 const form = document.querySelector('.form');
 
-form.addEventListener('submit', function verEscopo(evento){
-    evento.preventDefault();
+form.addEventListener('submit', function app(event) {
+    event.preventDefault();
 
-    const inputPeso = evento.target.querySelector('#peso');
-    const inputDistancia = evento.target.querySelector('#distancia');
+    const inputValor = document.querySelector('#valor');
+    const inputMes = document.querySelector('#meses');
 
-    const peso = Number(inputPeso.value);
-    const distancia = Number(inputDistancia.value);
+    const valor = Number(inputValor.value);
+    const meses = Number(inputMes.value);
 
-    if (!peso && !distancia) {
-        setAtributo('Peso e Distância inválidos', false);
+    if (!valor && !meses) {
+        setAtributo('Valor e Quantidade de meses inválidos!', false);
         return;
     }
-    if (!peso) {
-        setAtributo('Peso inválido', false);
+    if (!valor) {
+        setAtributo('Valor inválido!', false);
         return;
     }
-    if (!distancia) {
-        setAtributo('Distância inválida', false);
+    if (!meses) {
+        setAtributo('Quantidade de meses inválidas!', false);
         return;
     }
 
-    const valorFrete = calcularFrete(peso, distancia);
-    const situacao = situacaoFrete(distancia);
+    const economia = getValorEconomia(valor, meses);
+    const situacao = getSituacao(economia);
 
-    const msg = `O valor total do frete foi: ${valorFrete.toFixed(2)} (${situacao})`;
-    setAtributo(msg, true)
+    const msg = `Sua economia em ${meses} meses foi de ${economia.toFixed(2)} (${situacao})`;
+    setAtributo(msg, true);
 })
 
-function calcularFrete(peso, distancia) {
-    const valorBruto = peso * distancia * 0.15
-    return valorBruto;
+function getValorEconomia(valor, meses) {
+    const economiaMensal = valor * meses;
+
+    if (meses >= 12) return economiaMensal * 1.05;
+    return economiaMensal;
 }
 
-function situacaoFrete(distancia) {
-    let situacoes = ['Entrega Local (Prazo: 1 dia útil)', 'Entrega Regional (Prazo: 3 dias úteis)', 'Entrega Nacional (Prazo: 7 dias úteis)'];
+function getSituacao(economiaMensal) {
+    const situacoes = ['Reserva Inicial', 'Fundo de Emergência em Construção', 'Reserva Consolidada', 'Patrimônio Avançado']
 
-    if (distancia >= 200) return situacoes[2];
-    if (distancia >= 51) return situacoes[1];
+    if (economiaMensal > 15000) return situacoes[3];
+    if (economiaMensal > 5001) return situacoes[2];
+    if (economiaMensal > 1001) return situacoes[1];
     return situacoes[0];
+    
 }
 
 function criarP() {
@@ -55,8 +59,8 @@ function setAtributo(msg, isValid) {
 
     if (isValid) {
         p.classList.add('paragrafo-resultado');
-    } else{
-        p.classList.add('bad');
+    } else {
+        p.classList.add('bad')
     }
 
     p.innerHTML = msg;

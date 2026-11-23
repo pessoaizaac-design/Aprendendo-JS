@@ -10,37 +10,39 @@
 
 <body>
     <section class="container">
-        <h1>Tabela de Prazos</h1>
+        <h1>Simulador de economia mensal</h1>
         
         <div class="table">
             <div>
-                <h2>Distância</h2>
+                <h2>Total acumulado</h2>
                 <p>
-                    Até 50 km <br>
-                    De 51 a 200 km <br>
-                    Acima de 200 km <br>
+                    Até R$ 1.000,00 <br>
+                    De R$ 1.001,00 a R$ 5.000,00 <br>
+                    De R$ 5.001,00 a R$ 15.000,00 <br>
+                    Acima de R$ 15.000,00 <br>
                 </p>
             </div>
 
             <div>
-                <h2>Tipo de Entrega</h2>
+                <h2>Nível</h2>
                 <p>
-                    Entrega Local <br>
-                    Entrega Regional <br>
-                    Entrega Nacional <br>
+                    Reserva Inicial <br>
+                    Fundo de Emergência em Construção <br>
+                    Reserva Consolidada <br>
+                    Patrimônio Avançado <br>
                 </p>
             </div>
         </div>
 
-        <h1>Calculador de Frete</h1>
+        <h1>Calculador de Economia</h1>
         <form action="" class="form">
-            <label for="peso">Peso (KG):</label>
-            <input type="text" id="peso">
+            <label for="peso">Valor por Mês (R$):</label>
+            <input type="text" id="valor">
 
-            <label for="altura">Distância (KM):</label>
-            <input type="text" id="distancia">
+            <label for="altura">Quantidade de Meses:</label>
+            <input type="text" id="meses">
 
-            <button>Calcular Frete</button>
+            <button>Calcular Economia</button>
         </form>
 
         <div class="texto"></div>
